@@ -6,7 +6,7 @@ Asistente de IA para Faro, distribuidora de repuestos automotrices en Bogotá. R
 Fase 1: estructura del proyecto, entorno y pruebas. Todavía no hay servicio en funcionamiento.
 
 ## Requisitos
-- Python 3.12 o superior
+- Python 3.11 o superior
 - Git
 
 ## Instalación (menos de 10 minutos)
