@@ -1,0 +1,16 @@
+# Cómo trata Git cada tipo de archivo.
+
+# Texto: Git decide el fin de línea (CRLF en Windows, LF en el repo).
+* text=auto
+
+# Código y configuración: siempre LF, porque van a correr en Linux (Docker, AWS).
+*.py text eol=lf
+*.json text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
+*.toml text eol=lf
+
+# Binarios: Git no los toca nunca.
+*.pdf binary
+*.png binary
+*.jpg binary
