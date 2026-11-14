@@ -1,0 +1,612 @@
+[
+  {
+    "archivo": "FAC-01.pdf",
+    "numero": "IMP-7891",
+    "proveedor_nit": "900452318-4",
+    "proveedor_nombre": "Importadora Andina de Autopartes SAS",
+    "fecha": "2026-10-15",
+    "items": [
+      {
+        "referencia": "FAR-FA-003",
+        "descripcion": "Filtro de aceite Fram",
+        "cantidad": 4,
+        "precio_unitario": "19800",
+        "subtotal": "79200"
+      }
+    ],
+    "subtotal": "79200",
+    "iva": "15048.00",
+    "total": "94248.00",
+    "error_sembrado": null
+  },
+  {
+    "archivo": "FAC-02.pdf",
+    "numero": "DIS-9032",
+    "proveedor_nit": "830129774-1",
+    "proveedor_nombre": "Distribuidora Frenos y Partes del Norte SAS",
+    "fecha": "2026-10-01",
+    "items": [
+      {
+        "referencia": "FAR-DF-001",
+        "descripcion": "Disco de freno delantero Brembo",
+        "cantidad": 4,
+        "precio_unitario": "158000",
+        "subtotal": "632000"
+      },
+      {
+        "referencia": "FAR-PF-001",
+        "descripcion": "Pastillas de freno delanteras Bosch",
+        "cantidad": 10,
+        "precio_unitario": "72000",
+        "subtotal": "720000"
+      },
+      {
+        "referencia": "FAR-PF-003",
+        "descripcion": "Pastillas de freno delanteras Valeo",
+        "cantidad": 4,
+        "precio_unitario": "84000",
+        "subtotal": "336000"
+      },
+      {
+        "referencia": "FAR-PF-002",
+        "descripcion": "Pastillas de freno delanteras Brembo",
+        "cantidad": 24,
+        "precio_unitario": "108000",
+        "subtotal": "2592000"
+      }
+    ],
+    "subtotal": "4280000",
+    "iva": "813200.00",
+    "total": "5093200.00",
+    "error_sembrado": null
+  },
+  {
+    "archivo": "FAC-03.pdf",
+    "numero": "LUB-2250",
+    "proveedor_nit": "901238876-0",
+    "proveedor_nombre": "Lubricantes Sabana Ltda",
+    "fecha": "2026-11-02",
+    "items": [
+      {
+        "referencia": "FAR-FA-002",
+        "descripcion": "Filtro de aceite Bosch",
+        "cantidad": 12,
+        "precio_unitario": "16000",
+        "subtotal": "192000"
+      },
+      {
+        "referencia": "FAR-AC-001",
+        "descripcion": "Aceite de motor 10W-30 galón Mobil",
+        "cantidad": 12,
+        "precio_unitario": "79000",
+        "subtotal": "948000"
+      },
+      {
+        "referencia": "FAR-FA-003",
+        "descripcion": "Filtro de aceite Fram",
+        "cantidad": 20,
+        "precio_unitario": "19800",
+        "subtotal": "396000"
+      }
+    ],
+    "subtotal": "1536000",
+    "iva": "291840.00",
+    "total": "1827840.00",
+    "error_sembrado": null
+  },
+  {
+    "archivo": "FAC-04.pdf",
+    "numero": "ELÉ-6062",
+    "proveedor_nit": "800987123-5",
+    "proveedor_nombre": "Eléctricos Automotrices Prado SAS",
+    "fecha": "2026-11-06",
+    "items": [
+      {
+        "referencia": "FAR-BU-001",
+        "descripcion": "Bujía de iridio NGK",
+        "cantidad": 10,
+        "precio_unitario": "29000",
+        "subtotal": "290000"
+      },
+      {
+        "referencia": "FAR-BO-001",
+        "descripcion": "Bobina de encendido Bosch",
+        "cantidad": 24,
+        "precio_unitario": "121000",
+        "subtotal": "2904000"
+      },
+      {
+        "referencia": "FAR-BU-002",
+        "descripcion": "Bujía convencional NGK",
+        "cantidad": 5,
+        "precio_unitario": "9800",
+        "subtotal": "49000"
+      }
+    ],
+    "subtotal": "3243000",
+    "iva": "616170.00",
+    "total": "3859170.00",
+    "error_sembrado": null
+  },
+  {
+    "archivo": "FAC-05.pdf",
+    "numero": "SUS-7917",
+    "proveedor_nit": "901577402-9",
+    "proveedor_nombre": "Suspensiones Técnicas de Colombia SAS",
+    "fecha": "2026-10-30",
+    "items": [
+      {
+        "referencia": "FAR-AM-003",
+        "descripcion": "Amortiguador delantero Monroe",
+        "cantidad": 12,
+        "precio_unitario": "201000",
+        "subtotal": "2412000"
+      }
+    ],
+    "subtotal": "2412000",
+    "iva": "458280.00",
+    "total": "2870280.00",
+    "error_sembrado": null
+  },
+  {
+    "archivo": "FAC-06.pdf",
+    "numero": "REP-7970",
+    "proveedor_nit": "860045332-2",
+    "proveedor_nombre": "Repuestos El Ruiseñor SA",
+    "fecha": "2026-10-08",
+    "items": [
+      {
+        "referencia": "FAR-EM-001",
+        "descripcion": "Kit de embrague Valeo",
+        "cantidad": 24,
+        "precio_unitario": "405000",
+        "subtotal": "9720000"
+      }
+    ],
+    "subtotal": "9720000",
+    "iva": "1846800.00",
+    "total": "11656800.00",
+    "error_sembrado": "total_mal"
+  },
+  {
+    "archivo": "FAC-07.pdf",
+    "numero": "IMP-9572",
+    "proveedor_nit": "900452318-4",
+    "proveedor_nombre": "Importadora Andina de Autopartes SAS",
+    "fecha": "2026-10-04",
+    "items": [
+      {
+        "referencia": "FAR-FI-001",
+        "descripcion": "Filtro de aire Mann-Filter",
+        "cantidad": 24,
+        "precio_unitario": "26000",
+        "subtotal": "624000"
+      },
+      {
+        "referencia": "FAR-FI-002",
+        "descripcion": "Filtro de aire Bosch",
+        "cantidad": 2,
+        "precio_unitario": "24500",
+        "subtotal": "49000"
+      },
+      {
+        "referencia": "FAR-FA-003",
+        "descripcion": "Filtro de aceite Fram",
+        "cantidad": 6,
+        "precio_unitario": "19800",
+        "subtotal": "118800"
+      },
+      {
+        "referencia": "FAR-TE-001",
+        "descripcion": "Termostato Valeo",
+        "cantidad": 5,
+        "precio_unitario": "42000",
+        "subtotal": "210000"
+      }
+    ],
+    "subtotal": "1001800",
+    "iva": "190342.00",
+    "total": "1192142.00",
+    "error_sembrado": null
+  },
+  {
+    "archivo": "FAC-08.pdf",
+    "numero": "DIS-8898",
+    "proveedor_nit": "830129774-1",
+    "proveedor_nombre": "Distribuidora Frenos y Partes del Norte SAS",
+    "fecha": "2026-10-10",
+    "items": [
+      {
+        "referencia": "FAR-DF-001",
+        "descripcion": "Disco de freno delantero Brembo",
+        "cantidad": 24,
+        "precio_unitario": "158000",
+        "subtotal": "3792000"
+      }
+    ],
+    "subtotal": "3792000",
+    "iva": "720480.00",
+    "total": "4512480.00",
+    "error_sembrado": null
+  },
+  {
+    "archivo": "FAC-09.pdf",
+    "numero": "LUB-5112",
+    "proveedor_nit": "901238876-0",
+    "proveedor_nombre": "Lubricantes Sabana Ltda",
+    "fecha": "2026-11-04",
+    "items": [
+      {
+        "referencia": "FAR-FA-001",
+        "descripcion": "Filtro de aceite Mann-Filter",
+        "cantidad": 24,
+        "precio_unitario": "17500",
+        "subtotal": "420000"
+      },
+      {
+        "referencia": "FAR-FA-003",
+        "descripcion": "Filtro de aceite Fram",
+        "cantidad": 24,
+        "precio_unitario": "19800",
+        "subtotal": "475200"
+      }
+    ],
+    "subtotal": "895200",
+    "iva": "170088.00",
+    "total": "1065288.00",
+    "error_sembrado": null
+  },
+  {
+    "archivo": "FAC-10.pdf",
+    "numero": "ELÉ-1542",
+    "proveedor_nit": "800987123-5",
+    "proveedor_nombre": "Eléctricos Automotrices Prado SAS",
+    "fecha": "2026-10-01",
+    "items": [
+      {
+        "referencia": "FAR-BO-001",
+        "descripcion": "Bobina de encendido Bosch",
+        "cantidad": 20,
+        "precio_unitario": "121000",
+        "subtotal": "2420000"
+      },
+      {
+        "referencia": "FAR-BT-001",
+        "descripcion": "Batería 12V 45Ah MAC",
+        "cantidad": 6,
+        "precio_unitario": "262000",
+        "subtotal": "1572000"
+      },
+      {
+        "referencia": "FAR-BU-002",
+        "descripcion": "Bujía convencional NGK",
+        "cantidad": 10,
+        "precio_unitario": "9800",
+        "subtotal": "98000"
+      },
+      {
+        "referencia": "FAR-BU-001",
+        "descripcion": "Bujía de iridio NGK",
+        "cantidad": 10,
+        "precio_unitario": "29000",
+        "subtotal": "290000"
+      }
+    ],
+    "subtotal": "4380000",
+    "iva": "832200.00",
+    "total": "5212200.00",
+    "error_sembrado": null
+  },
+  {
+    "archivo": "FAC-11.pdf",
+    "numero": "SUS-5261",
+    "proveedor_nit": "901577402-9",
+    "proveedor_nombre": "Suspensiones Técnicas de Colombia SAS",
+    "fecha": "2026-10-13",
+    "items": [
+      {
+        "referencia": "FAR-RO-001",
+        "descripcion": "Rodamiento de rueda delantera SKF",
+        "cantidad": 24,
+        "precio_unitario": "80000",
+        "subtotal": "1920000"
+      },
+      {
+        "referencia": "FAR-AM-003",
+        "descripcion": "Amortiguador delantero Monroe",
+        "cantidad": 12,
+        "precio_unitario": "201000",
+        "subtotal": "2412000"
+      }
+    ],
+    "subtotal": "4332000",
+    "iva": "823080.00",
+    "total": "5155080.00",
+    "error_sembrado": null
+  },
+  {
+    "archivo": "FAC-12.pdf",
+    "numero": "REP-9440",
+    "proveedor_nit": "860045332-2",
+    "proveedor_nombre": "Repuestos El Ruiseñor SA",
+    "fecha": "2026-10-29",
+    "items": [
+      {
+        "referencia": "FAR-EM-001",
+        "descripcion": "Kit de embrague Valeo",
+        "cantidad": 10,
+        "precio_unitario": "405000",
+        "subtotal": "4050000"
+      },
+      {
+        "referencia": "FAR-EM-002",
+        "descripcion": "Kit de embrague Valeo",
+        "cantidad": 12,
+        "precio_unitario": "585000",
+        "subtotal": "7020000"
+      },
+      {
+        "referencia": "FAR-CR-002",
+        "descripcion": "Correa de accesorios Gates",
+        "cantidad": 24,
+        "precio_unitario": "45000",
+        "subtotal": "1080000"
+      },
+      {
+        "referencia": "FAR-CR-001",
+        "descripcion": "Kit de correa de repartición Gates",
+        "cantidad": 4,
+        "precio_unitario": "248000",
+        "subtotal": "992000"
+      }
+    ],
+    "subtotal": "13142000",
+    "iva": "2496980.00",
+    "total": "15638980.00",
+    "error_sembrado": null
+  },
+  {
+    "archivo": "FAC-13.pdf",
+    "numero": "IMP-7064",
+    "proveedor_nit": "900452318-4",
+    "proveedor_nombre": "Importadora Andina de Autopartes SAS",
+    "fecha": "2026-11-01",
+    "items": [
+      {
+        "referencia": "FAR-FI-001",
+        "descripcion": "Filtro de aire Mann-Filter",
+        "cantidad": 24,
+        "precio_unitario": "26000",
+        "subtotal": "634000"
+      },
+      {
+        "referencia": "FAR-FA-002",
+        "descripcion": "Filtro de aceite Bosch",
+        "cantidad": 4,
+        "precio_unitario": "16000",
+        "subtotal": "64000"
+      },
+      {
+        "referencia": "FAR-TE-001",
+        "descripcion": "Termostato Valeo",
+        "cantidad": 10,
+        "precio_unitario": "42000",
+        "subtotal": "420000"
+      }
+    ],
+    "subtotal": "1118000",
+    "iva": "212420.00",
+    "total": "1330420.00",
+    "error_sembrado": "item_mal"
+  },
+  {
+    "archivo": "FAC-14.pdf",
+    "numero": "DIS-8362",
+    "proveedor_nit": "830129774-1",
+    "proveedor_nombre": "Distribuidora Frenos y Partes del Norte SAS",
+    "fecha": "2026-10-10",
+    "items": [
+      {
+        "referencia": "FAR-PF-002",
+        "descripcion": "Pastillas de freno delanteras Brembo",
+        "cantidad": 20,
+        "precio_unitario": "108000",
+        "subtotal": "2160000"
+      }
+    ],
+    "subtotal": "2160000",
+    "iva": "410400.00",
+    "total": "2570400.00",
+    "error_sembrado": null
+  },
+  {
+    "archivo": "FAC-15.pdf",
+    "numero": "LUB-9955",
+    "proveedor_nit": "901238876-0",
+    "proveedor_nombre": "Lubricantes Sabana Ltda",
+    "fecha": "2026-10-29",
+    "items": [
+      {
+        "referencia": "FAR-FA-001",
+        "descripcion": "Filtro de aceite Mann-Filter",
+        "cantidad": 2,
+        "precio_unitario": "17500",
+        "subtotal": "35000"
+      }
+    ],
+    "subtotal": "35000",
+    "iva": "6650.00",
+    "total": "41650.00",
+    "error_sembrado": null
+  },
+  {
+    "archivo": "FAC-16.pdf",
+    "numero": "ELÉ-1731",
+    "proveedor_nit": "800987123-5",
+    "proveedor_nombre": "Eléctricos Automotrices Prado SAS",
+    "fecha": "2026-10-08",
+    "items": [
+      {
+        "referencia": "FAR-BU-002",
+        "descripcion": "Bujía convencional NGK",
+        "cantidad": 6,
+        "precio_unitario": "9800",
+        "subtotal": "58800"
+      }
+    ],
+    "subtotal": "58800",
+    "iva": "11172.00",
+    "total": "69972.00",
+    "error_sembrado": null
+  },
+  {
+    "archivo": "FAC-17.pdf",
+    "numero": "SUS-4652",
+    "proveedor_nit": "901577402-9",
+    "proveedor_nombre": "Suspensiones Técnicas de Colombia SAS",
+    "fecha": "2026-11-04",
+    "items": [
+      {
+        "referencia": "FAR-AM-003",
+        "descripcion": "Amortiguador delantero Monroe",
+        "cantidad": 12,
+        "precio_unitario": "201000",
+        "subtotal": "2412000"
+      },
+      {
+        "referencia": "FAR-AM-001",
+        "descripcion": "Amortiguador delantero Monroe",
+        "cantidad": 24,
+        "precio_unitario": "171000",
+        "subtotal": "4104000"
+      },
+      {
+        "referencia": "FAR-RO-001",
+        "descripcion": "Rodamiento de rueda delantera SKF",
+        "cantidad": 5,
+        "precio_unitario": "80000",
+        "subtotal": "400000"
+      }
+    ],
+    "subtotal": "6916000",
+    "iva": "1314040.00",
+    "total": "8230040.00",
+    "error_sembrado": null
+  },
+  {
+    "archivo": "FAC-18.pdf",
+    "numero": "REP-6013",
+    "proveedor_nit": "860045332-2",
+    "proveedor_nombre": "Repuestos El Ruiseñor SA",
+    "fecha": "2026-11-07",
+    "items": [
+      {
+        "referencia": "FAR-EM-002",
+        "descripcion": "Kit de embrague Valeo",
+        "cantidad": 4,
+        "precio_unitario": "585000",
+        "subtotal": "2340000"
+      },
+      {
+        "referencia": "FAR-CR-002",
+        "descripcion": "Correa de accesorios Gates",
+        "cantidad": 20,
+        "precio_unitario": "45000",
+        "subtotal": "900000"
+      },
+      {
+        "referencia": "FAR-BA-001",
+        "descripcion": "Bomba de agua Gates",
+        "cantidad": 5,
+        "precio_unitario": "136000",
+        "subtotal": "680000"
+      },
+      {
+        "referencia": "FAR-EM-001",
+        "descripcion": "Kit de embrague Valeo",
+        "cantidad": 5,
+        "precio_unitario": "405000",
+        "subtotal": "2025000"
+      }
+    ],
+    "subtotal": "5945000",
+    "iva": "1129550.00",
+    "total": "7074550.00",
+    "error_sembrado": null
+  },
+  {
+    "archivo": "FAC-19.pdf",
+    "numero": "IMP-1841",
+    "proveedor_nit": "900452318-4",
+    "proveedor_nombre": "Importadora Andina de Autopartes SAS",
+    "fecha": "2026-10-05",
+    "items": [
+      {
+        "referencia": "FAR-FI-001",
+        "descripcion": "Filtro de aire Mann-Filter",
+        "cantidad": 20,
+        "precio_unitario": "26000",
+        "subtotal": "520000"
+      },
+      {
+        "referencia": "FAR-FA-002",
+        "descripcion": "Filtro de aceite Bosch",
+        "cantidad": 2,
+        "precio_unitario": "16000",
+        "subtotal": "32000"
+      },
+      {
+        "referencia": "FAR-FI-002",
+        "descripcion": "Filtro de aire Bosch",
+        "cantidad": 4,
+        "precio_unitario": "24500",
+        "subtotal": "98000"
+      },
+      {
+        "referencia": "FAR-FC-001",
+        "descripcion": "Filtro de combustible Bosch",
+        "cantidad": 20,
+        "precio_unitario": "37000",
+        "subtotal": "740000"
+      }
+    ],
+    "subtotal": "1390000",
+    "iva": "264100.00",
+    "total": "1654100.00",
+    "error_sembrado": null
+  },
+  {
+    "archivo": "FAC-20.pdf",
+    "numero": "DIS-6341",
+    "proveedor_nit": "830129774-1",
+    "proveedor_nombre": "Distribuidora Frenos y Partes del Norte SAS",
+    "fecha": "2026-10-29",
+    "items": [
+      {
+        "referencia": "FAR-PF-003",
+        "descripcion": "Pastillas de freno delanteras Valeo",
+        "cantidad": 24,
+        "precio_unitario": "84000",
+        "subtotal": "2016000"
+      },
+      {
+        "referencia": "FAR-PF-001",
+        "descripcion": "Pastillas de freno delanteras Bosch",
+        "cantidad": 12,
+        "precio_unitario": "72000",
+        "subtotal": "864000"
+      },
+      {
+        "referencia": "FAR-DF-001",
+        "descripcion": "Disco de freno delantero Brembo",
+        "cantidad": 10,
+        "precio_unitario": "158000",
+        "subtotal": "1580000"
+      }
+    ],
+    "subtotal": "4410000",
+    "iva": "837900.00",
+    "total": "5247900.00",
+    "error_sembrado": "suma_mal"
+  }
+]
