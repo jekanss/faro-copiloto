@@ -1,0 +1,72 @@
+[
+  {
+    "documento": "901345221-3",
+    "nombre": "Taller Mecánico Los Andes",
+    "tipo": "taller",
+    "telefono": "3104452211",
+    "ciudad": "Bogotá"
+  },
+  {
+    "documento": "900876543-1",
+    "nombre": "Serviteca La 68",
+    "tipo": "taller",
+    "telefono": "3157781234",
+    "ciudad": "Bogotá"
+  },
+  {
+    "documento": "79845123",
+    "nombre": "Jorge Enrique Páez",
+    "tipo": "taller",
+    "telefono": "3002219087",
+    "ciudad": "Soacha"
+  },
+  {
+    "documento": "901122334-5",
+    "nombre": "Frenos y Embragues Kennedy",
+    "tipo": "taller",
+    "telefono": "3128876650",
+    "ciudad": "Bogotá"
+  },
+  {
+    "documento": "900234567-8",
+    "nombre": "Transportes Rápido Sabana SAS",
+    "tipo": "empresa",
+    "telefono": "6017456622",
+    "ciudad": "Funza"
+  },
+  {
+    "documento": "830456789-0",
+    "nombre": "Flota Mensajería Express SAS",
+    "tipo": "empresa",
+    "telefono": null,
+    "ciudad": "Bogotá"
+  },
+  {
+    "documento": "901998877-6",
+    "nombre": "Constructora Altos del Chicó SAS",
+    "tipo": "empresa",
+    "telefono": "6016123300",
+    "ciudad": "Bogotá"
+  },
+  {
+    "documento": "1018456723",
+    "nombre": "Laura Marcela Rincón",
+    "tipo": "persona",
+    "telefono": "3016654432",
+    "ciudad": "Bogotá"
+  },
+  {
+    "documento": "52789341",
+    "nombre": "Ana Lucía Torres",
+    "tipo": "persona",
+    "telefono": null,
+    "ciudad": "Chía"
+  },
+  {
+    "documento": "1032987654",
+    "nombre": "Andrés Felipe Gómez",
+    "tipo": "persona",
+    "telefono": "3209981122",
+    "ciudad": "Bogotá"
+  }
+]
