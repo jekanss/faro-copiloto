@@ -1,0 +1,319 @@
+[
+  {
+    "referencia": "FAR-FA-001",
+    "nombre": "Filtro de aceite",
+    "marca": "Mann-Filter",
+    "categoria": "Filtros",
+    "precio_venta": 28000,
+    "costo": 17500,
+    "stock": 64,
+    "vehiculos_compatibles": [
+      "Chevrolet Spark GT",
+      "Chevrolet Sail"
+    ]
+  },
+  {
+    "referencia": "FAR-FA-002",
+    "nombre": "Filtro de aceite",
+    "marca": "Bosch",
+    "categoria": "Filtros",
+    "precio_venta": 26500,
+    "costo": 16000,
+    "stock": 48,
+    "vehiculos_compatibles": [
+      "Renault Logan",
+      "Renault Sandero",
+      "Renault Duster"
+    ]
+  },
+  {
+    "referencia": "FAR-FA-003",
+    "nombre": "Filtro de aceite",
+    "marca": "Fram",
+    "categoria": "Filtros",
+    "precio_venta": 31000,
+    "costo": 19800,
+    "stock": 0,
+    "vehiculos_compatibles": [
+      "Toyota Hilux",
+      "Toyota Fortuner"
+    ]
+  },
+  {
+    "referencia": "FAR-FI-001",
+    "nombre": "Filtro de aire",
+    "marca": "Mann-Filter",
+    "categoria": "Filtros",
+    "precio_venta": 42000,
+    "costo": 26000,
+    "stock": 35,
+    "vehiculos_compatibles": [
+      "Mazda 2",
+      "Mazda 3"
+    ]
+  },
+  {
+    "referencia": "FAR-FI-002",
+    "nombre": "Filtro de aire",
+    "marca": "Bosch",
+    "categoria": "Filtros",
+    "precio_venta": 39000,
+    "costo": 24500,
+    "stock": 22,
+    "vehiculos_compatibles": [
+      "Kia Picanto",
+      "Hyundai i10"
+    ]
+  },
+  {
+    "referencia": "FAR-FC-001",
+    "nombre": "Filtro de combustible",
+    "marca": "Bosch",
+    "categoria": "Filtros",
+    "precio_venta": 58000,
+    "costo": 37000,
+    "stock": 15,
+    "vehiculos_compatibles": [
+      "Nissan Frontier",
+      "Toyota Hilux"
+    ]
+  },
+  {
+    "referencia": "FAR-PF-001",
+    "nombre": "Pastillas de freno delanteras",
+    "marca": "Bosch",
+    "categoria": "Frenos",
+    "precio_venta": 115000,
+    "costo": 72000,
+    "stock": 30,
+    "vehiculos_compatibles": [
+      "Chevrolet Spark GT"
+    ]
+  },
+  {
+    "referencia": "FAR-PF-002",
+    "nombre": "Pastillas de freno delanteras",
+    "marca": "Brembo",
+    "categoria": "Frenos",
+    "precio_venta": 168000,
+    "costo": 108000,
+    "stock": 12,
+    "vehiculos_compatibles": [
+      "Mazda 3",
+      "Mazda CX-30"
+    ]
+  },
+  {
+    "referencia": "FAR-PF-003",
+    "nombre": "Pastillas de freno delanteras",
+    "marca": "Valeo",
+    "categoria": "Frenos",
+    "precio_venta": 132000,
+    "costo": 84000,
+    "stock": 3,
+    "vehiculos_compatibles": [
+      "Renault Logan",
+      "Renault Sandero"
+    ]
+  },
+  {
+    "referencia": "FAR-DF-001",
+    "nombre": "Disco de freno delantero",
+    "marca": "Brembo",
+    "categoria": "Frenos",
+    "precio_venta": 245000,
+    "costo": 158000,
+    "stock": 8,
+    "vehiculos_compatibles": [
+      "Toyota Hilux"
+    ]
+  },
+  {
+    "referencia": "FAR-BU-001",
+    "nombre": "Bujía de iridio",
+    "marca": "NGK",
+    "categoria": "Encendido",
+    "precio_venta": 48000,
+    "costo": 29000,
+    "stock": 120,
+    "vehiculos_compatibles": [
+      "Mazda 2",
+      "Mazda 3",
+      "Kia Picanto"
+    ]
+  },
+  {
+    "referencia": "FAR-BU-002",
+    "nombre": "Bujía convencional",
+    "marca": "NGK",
+    "categoria": "Encendido",
+    "precio_venta": 16500,
+    "costo": 9800,
+    "stock": 200,
+    "vehiculos_compatibles": [
+      "Chevrolet Spark GT",
+      "Renault Logan"
+    ]
+  },
+  {
+    "referencia": "FAR-BO-001",
+    "nombre": "Bobina de encendido",
+    "marca": "Bosch",
+    "categoria": "Encendido",
+    "precio_venta": 189000,
+    "costo": 121000,
+    "stock": 6,
+    "vehiculos_compatibles": [
+      "Chevrolet Sail"
+    ]
+  },
+  {
+    "referencia": "FAR-CR-001",
+    "nombre": "Kit de correa de repartición",
+    "marca": "Gates",
+    "categoria": "Motor",
+    "precio_venta": 385000,
+    "costo": 248000,
+    "stock": 10,
+    "vehiculos_compatibles": [
+      "Renault Logan",
+      "Renault Duster"
+    ]
+  },
+  {
+    "referencia": "FAR-CR-002",
+    "nombre": "Correa de accesorios",
+    "marca": "Gates",
+    "categoria": "Motor",
+    "precio_venta": 72000,
+    "costo": 45000,
+    "stock": 25,
+    "vehiculos_compatibles": [
+      "Kia Picanto",
+      "Hyundai i10"
+    ]
+  },
+  {
+    "referencia": "FAR-BA-001",
+    "nombre": "Bomba de agua",
+    "marca": "Gates",
+    "categoria": "Refrigeración",
+    "precio_venta": 210000,
+    "costo": 136000,
+    "stock": 7,
+    "vehiculos_compatibles": [
+      "Chevrolet Spark GT"
+    ]
+  },
+  {
+    "referencia": "FAR-TE-001",
+    "nombre": "Termostato",
+    "marca": "Valeo",
+    "categoria": "Refrigeración",
+    "precio_venta": 68000,
+    "costo": 42000,
+    "stock": 0,
+    "vehiculos_compatibles": [
+      "Mazda 2"
+    ]
+  },
+  {
+    "referencia": "FAR-AM-001",
+    "nombre": "Amortiguador delantero",
+    "marca": "Monroe",
+    "categoria": "Suspensión",
+    "precio_venta": 265000,
+    "costo": 171000,
+    "stock": 14,
+    "vehiculos_compatibles": [
+      "Chevrolet Sail",
+      "Chevrolet Spark GT"
+    ]
+  },
+  {
+    "referencia": "FAR-AM-002",
+    "nombre": "Amortiguador trasero",
+    "marca": "Monroe",
+    "categoria": "Suspensión",
+    "precio_venta": 198000,
+    "costo": 127000,
+    "stock": 16,
+    "vehiculos_compatibles": [
+      "Renault Duster"
+    ]
+  },
+  {
+    "referencia": "FAR-AM-003",
+    "nombre": "Amortiguador delantero",
+    "marca": "Monroe",
+    "categoria": "Suspensión",
+    "precio_venta": 310000,
+    "costo": 201000,
+    "stock": 2,
+    "vehiculos_compatibles": [
+      "Toyota Fortuner"
+    ]
+  },
+  {
+    "referencia": "FAR-RO-001",
+    "nombre": "Rodamiento de rueda delantera",
+    "marca": "SKF",
+    "categoria": "Suspensión",
+    "precio_venta": 125000,
+    "costo": 80000,
+    "stock": 18,
+    "vehiculos_compatibles": [
+      "Kia Picanto",
+      "Hyundai i10"
+    ]
+  },
+  {
+    "referencia": "FAR-EM-001",
+    "nombre": "Kit de embrague",
+    "marca": "Valeo",
+    "categoria": "Transmisión",
+    "precio_venta": 620000,
+    "costo": 405000,
+    "stock": 5,
+    "vehiculos_compatibles": [
+      "Renault Logan",
+      "Renault Sandero"
+    ]
+  },
+  {
+    "referencia": "FAR-EM-002",
+    "nombre": "Kit de embrague",
+    "marca": "Valeo",
+    "categoria": "Transmisión",
+    "precio_venta": 890000,
+    "costo": 585000,
+    "stock": 1,
+    "vehiculos_compatibles": [
+      "Nissan Frontier"
+    ]
+  },
+  {
+    "referencia": "FAR-BT-001",
+    "nombre": "Batería 12V 45Ah",
+    "marca": "MAC",
+    "categoria": "Eléctrico",
+    "precio_venta": 395000,
+    "costo": 262000,
+    "stock": 20,
+    "vehiculos_compatibles": [
+      "Chevrolet Spark GT",
+      "Kia Picanto",
+      "Renault Logan"
+    ]
+  },
+  {
+    "referencia": "FAR-AC-001",
+    "nombre": "Aceite de motor 10W-30 galón",
+    "marca": "Mobil",
+    "categoria": "Lubricantes",
+    "precio_venta": 118000,
+    "costo": 79000,
+    "stock": 90,
+    "vehiculos_compatibles": []
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "nit": "900452318-4",
+    "razon_social": "Importadora Andina de Autopartes SAS",
+    "telefono": "6014567812",
+    "correo": "facturacion@andinaautopartes.co"
+  },
+  {
+    "nit": "830129774-1",
+    "razon_social": "Distribuidora Frenos y Partes del Norte SAS",
+    "telefono": "6017023345",
+    "correo": "cartera@frenosnorte.co"
+  },
+  {
+    "nit": "901238876-0",
+    "razon_social": "Lubricantes Sabana Ltda",
+    "telefono": "6018129900",
+    "correo": null
+  },
+  {
+    "nit": "800987123-5",
+    "razon_social": "Eléctricos Automotrices Prado SAS",
+    "telefono": null,
+    "correo": "ventas@electricosprado.co"
+  },
+  {
+    "nit": "901577402-9",
+    "razon_social": "Suspensiones Técnicas de Colombia SAS",
+    "telefono": "6015548120",
+    "correo": "facturas@suspensionestecnicas.co"
+  },
+  {
+    "nit": "860045332-2",
+    "razon_social": "Repuestos El Ruiseñor SA",
+    "telefono": "6012871456",
+    "correo": "contabilidad@elruisenor.co"
+  }
+]
