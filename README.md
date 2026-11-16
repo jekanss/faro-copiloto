@@ -40,6 +40,7 @@ Luego abre en el navegador:
 
 - http://127.0.0.1:8000/salud para ver si la API está viva
 - http://127.0.0.1:8000/docs para ver y probar todos los endpoints
+- En /docs, POST /facturas recibe el PDF de una factura (máximo 10 MB) y rechaza lo que no sea PDF
 
 Para apagarla, Ctrl+C en la terminal.
 
