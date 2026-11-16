@@ -1,23 +1,15 @@
-"""API de Faro Copiloto: la ventanilla por donde otros sistemas le hablan al programa."""
-
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-app = FastAPI(
-    title="Faro Copiloto",
-    version="0.1.0",
-    description="Servicios de IA para Faro: lectura de facturas, consulta de fichas y cotizaciones.",
-)
+app = FastAPI(title="Faro Copiloto", version="0.1.0")
 
 
-class EstadoSalud(BaseModel):
-    """Forma de la respuesta de /salud."""
-
+class Salud(BaseModel):
     estado: str
+    servicio: str
     version: str
 
 
-@app.get("/salud", response_model=EstadoSalud, tags=["operación"])
-def salud() -> EstadoSalud:
-    """Responde si la API está viva. La usa el monitoreo para saber si hay que reiniciarla."""
-    return EstadoSalud(estado="ok", version=app.version)
+@app.get("/salud", response_model=Salud)
+def salud() -> Salud:
+    return Salud(estado="ok", servicio="faro-copiloto", version=app.version)
