@@ -30,6 +30,19 @@ Fase 1: estructura del proyecto, entorno y pruebas. Todavía no hay servicio en 
 
 Si todo está bien, pytest termina en verde con todas las pruebas aprobadas.
 
+## Cómo correr la API
+
+Con el entorno virtual activo, desde la raíz del repo:
+
+    uvicorn faro.api:app --reload --app-dir src
+
+Luego abre en el navegador:
+
+- http://127.0.0.1:8000/salud para ver si la API está viva
+- http://127.0.0.1:8000/docs para ver y probar todos los endpoints
+
+Para apagarla, Ctrl+C en la terminal.
+
 ## Estructura
 - src/faro: código de la aplicación
 - tests: pruebas automáticas
