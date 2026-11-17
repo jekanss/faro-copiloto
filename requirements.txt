@@ -18,3 +18,4 @@ httpx==0.28.1
 python-multipart==0.0.33
 openai==3.51.0
 python-dotenv==1.2.4
+psycopg[binary]==3.3.9
