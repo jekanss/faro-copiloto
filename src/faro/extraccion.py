@@ -27,10 +27,9 @@ Reglas:
 """
 
 
-def extraer_factura(ruta_pdf: str | Path) -> tuple[Factura, dict]:
-    """Lee un PDF y devuelve la factura extraída y el uso de tokens."""
-    ruta = Path(ruta_pdf)
-    pdf_b64 = base64.b64encode(ruta.read_bytes()).decode()
+def extraer_bytes(contenido: bytes, nombre: str) -> tuple[Factura, dict]:
+    """Lee el contenido de un PDF y devuelve la factura extraída y el uso de tokens."""
+    pdf_b64 = base64.b64encode(contenido).decode()
     cliente = OpenAI()
     respuesta = cliente.responses.parse(
         model=MODELO,
@@ -42,7 +41,7 @@ def extraer_factura(ruta_pdf: str | Path) -> tuple[Factura, dict]:
                 "content": [
                     {
                         "type": "input_file",
-                        "filename": ruta.name,
+                        "filename": nombre,
                         "file_data": f"data:application/pdf;base64,{pdf_b64}",
                     },
                     {"type": "input_text", "text": "Extrae esta factura."},
@@ -60,3 +59,9 @@ def extraer_factura(ruta_pdf: str | Path) -> tuple[Factura, dict]:
         "tokens_razonamiento": detalle.reasoning_tokens if detalle else 0,
     }
     return respuesta.output_parsed, uso
+
+
+def extraer_factura(ruta_pdf: str | Path) -> tuple[Factura, dict]:
+    """Atajo para leer un PDF desde el disco."""
+    ruta = Path(ruta_pdf)
+    return extraer_bytes(ruta.read_bytes(), ruta.name)
