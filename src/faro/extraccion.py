@@ -16,6 +16,7 @@ from faro.modelos import Factura
 load_dotenv()
 
 MODELO = os.getenv("OPENAI_MODEL", "gpt-5-mini")
+ESFUERZO = os.getenv("OPENAI_REASONING_EFFORT", "low")
 
 INSTRUCCIONES = """Eres un digitador contable. Lee la factura de compra en PDF y llena el formulario.
 Reglas:
@@ -33,6 +34,7 @@ def extraer_factura(ruta_pdf: str | Path) -> tuple[Factura, dict]:
     cliente = OpenAI()
     respuesta = cliente.responses.parse(
         model=MODELO,
+        reasoning={"effort": ESFUERZO},
         instructions=INSTRUCCIONES,
         input=[
             {
@@ -49,9 +51,12 @@ def extraer_factura(ruta_pdf: str | Path) -> tuple[Factura, dict]:
         ],
         text_format=Factura,
     )
+    detalle = respuesta.usage.output_tokens_details
     uso = {
         "modelo": MODELO,
+        "esfuerzo": ESFUERZO,
         "tokens_entrada": respuesta.usage.input_tokens,
         "tokens_salida": respuesta.usage.output_tokens,
+        "tokens_razonamiento": detalle.reasoning_tokens if detalle else 0,
     }
     return respuesta.output_parsed, uso
