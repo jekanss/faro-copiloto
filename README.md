@@ -44,6 +44,15 @@ Luego abre en el navegador:
 
 Para apagarla, Ctrl+C en la terminal.
 
+### Base de datos (Neon)
+
+1. Crea un proyecto en neon.tech y copia la cadena de conexión.
+2. Agrégala a `.env`: `DATABASE_URL=postgresql://...`
+3. Crea las tablas: `python scripts\migrar.py` (se puede correr varias veces; lo ya aplicado se salta).
+
+Prueba de salida de la Fase 2 (gasta unos USD 0.03 y escribe en la base):
+`python scripts\prueba_salida_fase2.py`
+
 ## Estructura
 - src/faro: código de la aplicación
 - tests: pruebas automáticas
