@@ -1,7 +1,14 @@
 """API de Faro Copiloto: la ventanilla por donde otros sistemas le hablan al programa."""
 
+from typing import Literal
+
 from fastapi import FastAPI, File, HTTPException, UploadFile, status
-from pydantic import BaseModel
+from openai import APIError
+from pydantic import BaseModel, ValidationError
+from starlette.concurrency import run_in_threadpool
+
+from faro import extraccion
+from faro.modelos import Factura
 
 app = FastAPI(
     title="Faro Copiloto",
@@ -19,12 +26,18 @@ class EstadoSalud(BaseModel):
     version: str
 
 
-class FacturaRecibida(BaseModel):
-    """Lo que responde la API cuando acepta un PDF."""
+class FacturaProcesada(BaseModel):
+    """Lo que responde la API después de leer un PDF.
+
+    procesada: se extrajo y las cuentas cierran.
+    para_revision: Diana tiene que mirarla; motivo dice por qué.
+    """
 
     archivo: str
     tamano_bytes: int
-    estado: str
+    estado: Literal["procesada", "para_revision"]
+    motivo: str | None = None
+    factura: Factura | None = None
 
 
 @app.get("/salud", response_model=EstadoSalud, tags=["operación"])
@@ -35,12 +48,15 @@ def salud() -> EstadoSalud:
 
 @app.post(
     "/facturas",
-    response_model=FacturaRecibida,
+    response_model=FacturaProcesada,
     status_code=status.HTTP_201_CREATED,
     tags=["facturas"],
 )
-async def recibir_factura(pdf: UploadFile = File(...)) -> FacturaRecibida:
-    """Recibe el PDF de una factura y verifica que sea un PDF real antes de aceptarlo."""
+async def recibir_factura(pdf: UploadFile = File(...)) -> FacturaProcesada:
+    """Recibe el PDF de una factura, la lee con IA y la verifica con reglas.
+
+    La IA propone, las reglas verifican: lo que no cuadra va a revisión, no a contabilidad.
+    """
     contenido = await pdf.read()
 
     if not contenido:
@@ -50,8 +66,36 @@ async def recibir_factura(pdf: UploadFile = File(...)) -> FacturaRecibida:
     if not contenido.startswith(b"%PDF"):
         raise HTTPException(status_code=415, detail="El archivo no es un PDF.")
 
-    return FacturaRecibida(
-        archivo=pdf.filename or "sin_nombre.pdf",
+    nombre = pdf.filename or "sin_nombre.pdf"
+
+    try:
+        # El ayudante espera a OpenAI; la API sigue atendiendo a los demás.
+        factura, _uso = await run_in_threadpool(extraccion.extraer_bytes, contenido, nombre)
+    except ValidationError:
+        return FacturaProcesada(
+            archivo=nombre,
+            tamano_bytes=len(contenido),
+            estado="para_revision",
+            motivo="La lectura no pasó la validación de forma (NIT, fecha o valores).",
+        )
+    except APIError:
+        raise HTTPException(
+            status_code=502,
+            detail="El servicio de lectura no respondió. Intenta de nuevo en un momento.",
+        )
+
+    if not factura.cuadra():
+        return FacturaProcesada(
+            archivo=nombre,
+            tamano_bytes=len(contenido),
+            estado="para_revision",
+            motivo="Las cuentas de la factura no cuadran.",
+            factura=factura,
+        )
+
+    return FacturaProcesada(
+        archivo=nombre,
         tamano_bytes=len(contenido),
-        estado="recibida",
+        estado="procesada",
+        factura=factura,
     )
