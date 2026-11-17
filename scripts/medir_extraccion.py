@@ -15,13 +15,11 @@ from pydantic import ValidationError
 RAIZ = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(RAIZ / "src"))
 
-from faro.extraccion import extraer_factura  # noqa: E402
+from faro.extraccion import costo_usd, extraer_factura  # noqa: E402
 
 CARPETA = RAIZ / "data" / "facturas"
 
-# Dólares por millón de tokens. Verificar en la página de precios de OpenAI.
-PRECIO_ENTRADA = Decimal("0.25")
-PRECIO_SALIDA = Decimal("2.00")
+
 
 CAMPOS = ["numero", "proveedor_nit", "fecha", "items", "subtotal", "iva", "total"]
 
@@ -79,10 +77,7 @@ for idx, esp in enumerate(esperadas, start=1):
         print(f"FALLO DE FORMA ({e.error_count()} errores): va a revisión  ({time.time() - t0:.0f} s)", flush=True)
         continue
 
-    costo = (
-        uso["tokens_entrada"] * PRECIO_ENTRADA + uso["tokens_salida"] * PRECIO_SALIDA
-    ) / 1_000_000
-    costo_total += costo
+    costo = costo_usd(uso)
 
     malos = comparar(factura.model_dump(mode="json"), esp)
     for c in CAMPOS:

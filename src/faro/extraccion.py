@@ -5,6 +5,7 @@ La IA transcribe; la regla cuadra() juzga después.
 """
 
 import base64
+from decimal import Decimal
 import os
 from pathlib import Path
 
@@ -17,6 +18,16 @@ load_dotenv()
 
 MODELO = os.getenv("OPENAI_MODEL", "gpt-5-mini")
 ESFUERZO = os.getenv("OPENAI_REASONING_EFFORT", "low")
+
+
+# Dólares por millón de tokens de gpt-5-mini. Si cambias OPENAI_MODEL, actualiza estos precios.
+PRECIO_ENTRADA = Decimal("0.25")
+PRECIO_SALIDA = Decimal("2.00")
+
+
+def costo_usd(uso: dict) -> Decimal:
+    """Convierte el uso de tokens en dólares. El razonamiento ya viene incluido en la salida."""
+    return (uso["tokens_entrada"] * PRECIO_ENTRADA + uso["tokens_salida"] * PRECIO_SALIDA) / 1_000_000
 
 INSTRUCCIONES = """Eres un digitador contable. Lee la factura de compra en PDF y llena el formulario.
 Reglas:

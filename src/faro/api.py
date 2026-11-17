@@ -1,13 +1,15 @@
 """API de Faro Copiloto: la ventanilla por donde otros sistemas le hablan al programa."""
 
+from decimal import Decimal
 from typing import Literal
 
+import psycopg
 from fastapi import FastAPI, File, HTTPException, UploadFile, status
 from openai import APIError
 from pydantic import BaseModel, ValidationError
 from starlette.concurrency import run_in_threadpool
 
-from faro import extraccion
+from faro import db, extraccion
 from faro.modelos import Factura
 
 app = FastAPI(
@@ -27,17 +29,19 @@ class EstadoSalud(BaseModel):
 
 
 class FacturaProcesada(BaseModel):
-    """Lo que responde la API después de leer un PDF.
+    """Lo que responde la API después de leer y guardar un PDF.
 
     procesada: se extrajo y las cuentas cierran.
     para_revision: Diana tiene que mirarla; motivo dice por qué.
     """
 
+    id: int
     archivo: str
     tamano_bytes: int
     estado: Literal["procesada", "para_revision"]
     motivo: str | None = None
     factura: Factura | None = None
+    costo_usd: Decimal | None = None
 
 
 @app.get("/salud", response_model=EstadoSalud, tags=["operación"])
@@ -53,7 +57,7 @@ def salud() -> EstadoSalud:
     tags=["facturas"],
 )
 async def recibir_factura(pdf: UploadFile = File(...)) -> FacturaProcesada:
-    """Recibe el PDF de una factura, la lee con IA y la verifica con reglas.
+    """Recibe el PDF, lo lee con IA, lo verifica con reglas y lo guarda con su costo.
 
     La IA propone, las reglas verifican: lo que no cuadra va a revisión, no a contabilidad.
     """
@@ -67,35 +71,45 @@ async def recibir_factura(pdf: UploadFile = File(...)) -> FacturaProcesada:
         raise HTTPException(status_code=415, detail="El archivo no es un PDF.")
 
     nombre = pdf.filename or "sin_nombre.pdf"
+    factura: Factura | None = None
+    uso: dict | None = None
 
+    # 1. Leer. El ayudante espera a OpenAI; la API sigue atendiendo a los demás.
     try:
-        # El ayudante espera a OpenAI; la API sigue atendiendo a los demás.
-        factura, _uso = await run_in_threadpool(extraccion.extraer_bytes, contenido, nombre)
+        factura, uso = await run_in_threadpool(extraccion.extraer_bytes, contenido, nombre)
     except ValidationError:
-        return FacturaProcesada(
-            archivo=nombre,
-            tamano_bytes=len(contenido),
-            estado="para_revision",
-            motivo="La lectura no pasó la validación de forma (NIT, fecha o valores).",
-        )
+        estado, motivo = "para_revision", "La lectura no pasó la validación de forma (NIT, fecha o valores)."
     except APIError:
         raise HTTPException(
             status_code=502,
             detail="El servicio de lectura no respondió. Intenta de nuevo en un momento.",
         )
+    else:
+        # 2. Decidir. Las reglas juzgan lo que la IA propuso.
+        if factura.cuadra():
+            estado, motivo = "procesada", None
+        else:
+            estado, motivo = "para_revision", "Las cuentas de la factura no cuadran."
 
-    if not factura.cuadra():
-        return FacturaProcesada(
-            archivo=nombre,
-            tamano_bytes=len(contenido),
-            estado="para_revision",
-            motivo="Las cuentas de la factura no cuadran.",
-            factura=factura,
+    costo = extraccion.costo_usd(uso) if uso else None
+
+    # 3. Guardar, una sola vez, con el estado ya decidido.
+    try:
+        factura_id = await run_in_threadpool(
+            db.guardar_factura, nombre, estado, motivo, factura, uso, costo
+        )
+    except psycopg.Error:
+        raise HTTPException(
+            status_code=503,
+            detail="La factura se leyó pero no se pudo guardar. Súbela de nuevo en un momento.",
         )
 
     return FacturaProcesada(
+        id=factura_id,
         archivo=nombre,
         tamano_bytes=len(contenido),
-        estado="procesada",
+        estado=estado,
+        motivo=motivo,
         factura=factura,
+        costo_usd=costo,
     )
