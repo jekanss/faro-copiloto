@@ -56,7 +56,7 @@ def por_palabras(con, pregunta, referencias=None, n=POR_LISTA):
         """
         WITH q AS (
             SELECT string_agg(quote_literal(l), ' | ')::tsquery AS q
-            FROM unnest(tsvector_to_array(to_tsvector('spanish', %s))) AS l
+            FROM unnest(tsvector_to_array(to_tsvector('es_sin_tildes', %s))) AS l
         )
         SELECT f.id, ts_rank(f.palabras, q.q) AS rango FROM fragmentos f, q
         WHERE f.palabras @@ q.q
