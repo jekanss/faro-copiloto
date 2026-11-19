@@ -47,7 +47,7 @@ def mostrar(titulo, lista, decimales):
 print(f'\nPregunta: "{pregunta}"')
 print("Filtro por referencia:", ", ".join(referencias_en(pregunta)) or "ninguno")
 mostrar("Bibliotecario 1, sentido (similitud coseno, de 0 a 1):", sentido, 3)
-mostrar("Bibliotecario 2, palabras (ts_rank, otra escala):", palabras, 4)
+mostrar("Bibliotecario 2, palabras (BM25, otra escala):", palabras, 4)
 
 puestos_sentido = {id_: p for p, (id_, _) in enumerate(sentido, start=1)}
 puestos_palabras = {id_: p for p, (id_, _) in enumerate(palabras, start=1)}

@@ -13,6 +13,7 @@ MODELO = "text-embedding-3-small"  # el mismo con que se cargaron las fichas
 K_RRF = 60  # constante estandar del paper de RRF
 POR_LISTA = 10  # cuantos pedazos trae cada bibliotecario
 PATRON_REFERENCIA = re.compile(r"\bFAR-[A-Z]{2}-\d{3}\b", re.IGNORECASE)  # formato de Faro
+INDICE_BM25 = "fragmentos_palabras_bm25"  # creado en la migracion 006
 
 
 def referencias_en(pregunta):
@@ -51,20 +52,29 @@ def por_sentido(con, literal, referencias=None, n=POR_LISTA):
 
 
 def por_palabras(con, pregunta, referencias=None, n=POR_LISTA):
-    """Bibliotecario 2: (id, ts_rank) de pedazos con alguna palabra (O, no Y)."""
+    """Bibliotecario 2: (id, puntaje BM25) de pedazos con alguna palabra (O, no Y).
+
+    Mismos candidatos que antes (el O con @@); solo cambia el orden:
+    BM25 sabe que tan rara es cada palabra y ts_rank no.
+    <@> da el puntaje en negativo; se le cambia el signo para que mas alto sea mejor.
+    Nota de escala: ordenar por el valor con signo cambiado puede saltarse el
+    atajo top-K del indice. Con cientos de pedazos no importa; con miles, revisar.
+    """
     filas = con.execute(
         """
         WITH q AS (
             SELECT string_agg(quote_literal(l), ' | ')::tsquery AS q
             FROM unnest(tsvector_to_array(to_tsvector('es_sin_tildes', %s))) AS l
         )
-        SELECT f.id, ts_rank(f.palabras, q.q) AS rango FROM fragmentos f, q
+        SELECT f.id,
+               -(f.palabras <@> to_bm25query(to_tsvector('es_sin_tildes', %s), %s)) AS rango
+        FROM fragmentos f, q
         WHERE f.palabras @@ q.q
           AND (%s::text[] IS NULL OR f.referencia = ANY(%s::text[]))
         ORDER BY rango DESC, f.id
         LIMIT %s
         """,
-        (pregunta, referencias, referencias, n),
+        (pregunta, pregunta, INDICE_BM25, referencias, referencias, n),
     ).fetchall()
     return [(f[0], float(f[1])) for f in filas]
 
